@@ -16,9 +16,10 @@ function calcWinner(squares) {
         if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
             return squares[a];
         }
-        return null;
     }
+
 }
+
 export default function App() {
     const [squares, setsquares] = useState(Array(9).fill(null));
     const [XisNext, setXisNext] = useState(true);
@@ -37,8 +38,20 @@ export default function App() {
     let status;
     if (winner)
         status = "Winner: " + winner;
-    else
-        status = "Next player: " + (XisNext ? "X" : "O");
+    else {
+        let empty = false, j = 0;
+        while (j < squares.length && empty == false) {
+            if (squares[j] == null) {
+                empty = true;
+                status = "Next player: " + (XisNext ? "X" : "O");
+            }
+            j++;
+        }
+        if (empty == false)
+            status = "Draw!"
+    }
+
+
     return (
         <>
             <div style={{textAlign: "center"}}>{status}</div>
@@ -59,7 +72,7 @@ export default function App() {
                         handleclick(2)
                     }/>
                 </div>
-                <div className="board-row">
+                <div className="boardrow">
                     <Square value={squares[3]} squareclick={() =>
                         handleclick(3)
                     }/>
@@ -70,7 +83,7 @@ export default function App() {
                         handleclick(5)
                     }/>
                 </div>
-                <div className="board-row">
+                <div className="boardrow">
                     <Square value={squares[6]} squareclick={() =>
                         handleclick(6)
                     }/>

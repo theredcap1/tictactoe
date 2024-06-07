@@ -21,20 +21,20 @@ body {
 }
 
 
-button {
-  border-radius: 8px;
-  font-weight: 500;
-  cursor: pointer;
-  height: 70px;
+.case {
   width: 70px;
-}
-button:focus, button:focus-within {
+  height: 70px;
+  background: lightgrey;
+  border: 1px solid black;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
 }
-button:active {
-  margin: 0;
-  padding: 0;
-  outline: none;
+.boardrow {
+  display: flex;
+  flex-direction: row;
 }
-
