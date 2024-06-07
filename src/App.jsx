@@ -41,7 +41,7 @@ export default function App() {
         status = "Next player: " + (XisNext ? "X" : "O");
     return (
         <>
-            <div>{status}</div>
+            <div style={{textAlign: "center"}}>{status}</div>
             <div style={{
                 margin: '20px',
                 display: "flex",
