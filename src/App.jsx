@@ -23,8 +23,8 @@ export default function App() {
         else
             description = 'Go to game start';
         return (
-            <li>
-                <button onClick={() => jumpto(move)}>{description}</button>
+            <li style={{display: "flex", flexDirection: "row", justifyContent: "center"}}>
+                <button onClick={() => jumpto(move)} style={{marginBottom: '5px'}}>{description}</button>
             </li>
         )
     })
