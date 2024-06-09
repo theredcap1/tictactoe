@@ -24,7 +24,7 @@ export default function App() {
             description = 'Go to game start';
         return (
             <li style={{display: "flex", flexDirection: "row", justifyContent: "center"}}>
-                <button onClick={() => jumpto(move)} style={{marginBottom: '5px'}}>{description}</button>
+                <button onClick={() => jumpto(move)} style={{margin: '0 2% 7px 0', borderRadius: '15px', fontSize: '1.5em'}}>{description}</button>
             </li>
         )
     })
@@ -34,7 +34,11 @@ export default function App() {
                 <Board XisNext={XisNext} squares={currentSquares} onPlay={handlePlay}/>
             </div>
             <div className="game-info">
-                <ol>{moves}</ol>
+                <ul>{moves.map((move) => (
+                    <li style={{listStyleType: 'none'}}>
+                        {move}
+                    </li>
+                ))}</ul>
             </div>
         </div>
     )
